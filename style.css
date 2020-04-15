@@ -1,0 +1,110 @@
+
+html {
+    margin: auto;
+    display:table;
+}
+
+body {
+    background:white;
+    text-align: center;
+    width:700px;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+}
+
+.row {
+    float: left;
+}
+
+#container {
+    width: 720px;
+    height: 720px;
+    padding: 0px;
+    border: 3px solid ;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.grid-square {
+    box-sizing: border-box;
+    border: 1px solid rgb(241, 232, 232);
+}
+
+.noGrid {
+    border: none !important;
+}
+
+#instructions {
+    margin: 1em;
+}
+
+.button {
+    float:left;
+    margin:5px 0 0 4px;;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background-color: #2bbbbb;
+}
+
+.button:focus {
+    outline: none !important;
+}
+
+.button:hover {
+   background-color: #134e4e;
+}
+
+#buttons-div {
+    height: 50px;
+    width:720px;
+}
+
+#buttons:focus {
+    outline: none !important;
+}
+
+.colorSelector {
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin: 10px 0px 0px 4px;
+}
+
+.colorSelector:hover {
+    border: 2px solid;
+}
+
+.colorSelectorClicked {
+    border: 3px solid;
+    outline: none !important;
+    opacity: 80;
+}
+
+#color-select-div {
+    margin: 0 10px 0 0;
+}
+
+#removeGridButton {
+    width: 11em;
+}
+
+.eraser {
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin: 10px 6px 0px 0px;
+}
+
+.eraser:hover {
+    border: 1px solid;
+    border-radius: 20%;
+    
+}
+
+.eraser:focus {
+    border: 1px solid;
+    border-radius: 20%;
+    outline: none !important;
+}
