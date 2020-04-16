@@ -9,7 +9,7 @@
 <body>
     <h1>Etch-A-Sketch</h1>
     <div id = 'instructions'>
-        <p> Click a square to color it. Hold the Shift key to Draw. Click a colored pixel to erase it.</p>
+        <p> Hold the Shift key to Draw. Click a colored pixel to clear it.</p>
     </div>
     
     <div id = 'buttons-div'>
@@ -19,17 +19,8 @@
         <button id = 'newGridButton' class = 'button'>New Grid</button>
 
         <div id = 'color-select-div'>
-            <button id = 'black' class = 'colorSelector'></button>
-            <button id = 'white' class = 'colorSelector'></button>
-            <button id = 'brown' class = 'colorSelector'></button>
-            <button id = 'red' class = 'colorSelector'></button>
-            <button id = 'purple' class = 'colorSelector'></button>
-            <button id = 'orange' class = 'colorSelector'></button>
-            <button id = 'blue' class = 'colorSelector'></button>
-            <button id = 'green' class = 'colorSelector'></button>
-            <button id = 'darkgreen' class = 'colorSelector'></button>
-            <button id = 'yellow' class = 'colorSelector'></button>
-            <input type='image' id = '#dbd9d9' src='eraser-icon.jpg' class = 'colorSelector eraser'></input>
+            <input type = 'color' id = 'color-selector'></input>
+            <input type='image' id = 'eraser' src='eraser-icon.jpg' class = 'colorSelector eraser'></input>
         </div>
     </div>
     
@@ -42,4 +33,3 @@
 </html>
 
 <script src = 'etchASketch.js'> </script>
-
