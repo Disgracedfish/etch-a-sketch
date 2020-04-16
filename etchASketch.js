@@ -2,25 +2,17 @@ const container = document.querySelector('#container');
 const clearButton = document.querySelector('#clearButton');
 const newGridButton = document.querySelector('#newGridButton');
 const removeGridButton = document.querySelector('#removeGridButton');
-
-const redSelectButton = document.querySelector('#red');
-const blueSelectButton = document.querySelector('#blue');
-const greenSelectButton = document.querySelector('#green');
-const blackSelectButton = document.querySelector('#black');
-const whiteSelectButton = document.querySelector('#white');
+const colorSelection = document.getElementById('color-selector');
+const eraserButton = document.getElementById('eraser')
 
 const backgroundColor = '#dbd9d9';
 var pixelsPerSide = 40;
-var currentColor = 'black'
 
 function makeGrid() {
-
     pixelSize = (720/pixelsPerSide);
-
     for (let i=1; i<=pixelsPerSide;i++) {
         var row = document.createElement('div');
         row.className = 'row';
-    
         for (let j=1; j<=pixelsPerSide; j++) {
             var gridSquare = document.createElement('div');
             gridSquare.classList += 'grid-square';
@@ -34,28 +26,30 @@ function makeGrid() {
     }
 }
 
-
 function clearGrid() {
     let squares = document.getElementsByClassName('grid-square');
     for (i=0; i<squares.length; i++) {
         squares[i].style.backgroundColor = backgroundColor;
    }
-   
 }
-
 
 function changeColor(e) {
     if (e.shiftKey) {
-        e.target.style.backgroundColor = currentColor;}
+        e.target.style.backgroundColor = colorSelection.value;}
 }
 
 function resetColor(e) {
     let testColorDiv = document.createElement('div');
     testColorDiv.style.backgroundColor = backgroundColor;
     if (e.target.style.backgroundColor === testColorDiv.style.backgroundColor) {
-        e.target.style.backgroundColor = currentColor;
+        e.target.style.backgroundColor = colorSelection.value;
     } else {
-        e.target.style.backgroundColor = backgroundColor;
+        testColorDiv.style.backgroundColor = colorSelection.value;
+        if (e.target.style.backgroundColor === testColorDiv.style.backgroundColor) {
+                e.target.style.backgroundColor = backgroundColor;
+        } else {
+            e.target.style.backgroundColor = colorSelection.value;
+        }
     }
 }
 
@@ -81,15 +75,6 @@ function newGrid() {
         makeGrid();}
 }
 
-function newColorSelect(e) {
-    currentColor = e.target.id;
-    selectorButtons = document.getElementsByClassName('colorSelector');
-    for (i=0; i<selectorButtons.length;i++) {
-        selectorButtons[i].classList.remove('colorSelectorClicked');
-    }
-    e.target.classList.add('colorSelectorClicked');
-}
-
 function toggleGrid(e) {
     let squares  = document.getElementsByClassName('grid-square');
     for (i=0; i<squares.length;i++) {
@@ -102,16 +87,11 @@ function toggleGrid(e) {
     }
 }
 
-// add event listerns to all color selection buttons
-selectorButtons = document.getElementsByClassName('colorSelector');
-for (i=0; i<selectorButtons.length;i++) {
-    selectorButtons[i].addEventListener('click', newColorSelect)
-    selectorButtons[i].style.backgroundColor=selectorButtons[i].id;
-}
-
+// add click event listeners to buttons
 clearButton.addEventListener('click', clearGrid);
 newGridButton.addEventListener('click', newGrid);
 removeGridButton.addEventListener('click', toggleGrid);
+eraserButton.addEventListener('click', function(e) {colorSelection.value = backgroundColor;})
 
-
+// initialize app on first visit
 makeGrid();
