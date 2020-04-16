@@ -50,7 +50,9 @@ function changeColor(e) {
 }
 
 function resetColor(e) {
-    if (e.target.style.backgroundColor === backgroundColor) {
+    let testColorDiv = document.createElement('div');
+    testColorDiv.style.backgroundColor = backgroundColor;
+    if (e.target.style.backgroundColor === testColorDiv.style.backgroundColor) {
         e.target.style.backgroundColor = currentColor;
     } else {
         e.target.style.backgroundColor = backgroundColor;
