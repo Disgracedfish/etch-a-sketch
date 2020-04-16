@@ -29,7 +29,7 @@ body {
 
 .grid-square {
     box-sizing: border-box;
-    border: 1px solid rgb(241, 232, 232);
+    border: 1px solid #f1e8e8;
 }
 
 .noGrid {
@@ -65,25 +65,17 @@ body {
     outline: none !important;
 }
 
-.colorSelector {
-    float: right;
-    height: 30px;
-    width: 30px;
-    margin: 10px 0px 0px 4px;
-}
-
-.colorSelector:hover {
-    border: 2px solid;
-}
-
-.colorSelectorClicked {
-    border: 3px solid;
-    outline: none !important;
-    opacity: 80;
-}
-
 #color-select-div {
-    margin: 0 10px 0 0;
+    margin: 0 0 0 0;
+    float: right;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    
+    
 }
 
 #removeGridButton {
@@ -91,10 +83,10 @@ body {
 }
 
 .eraser {
-    float: right;
     height: 30px;
     width: 30px;
-    margin: 10px 6px 0px 0px;
+    margin: 5px;
+   
 }
 
 .eraser:hover {
@@ -107,4 +99,8 @@ body {
     border: 1px solid;
     border-radius: 20%;
     outline: none !important;
+}
+
+#color-selector {
+    margin: 0 6px;
 }
